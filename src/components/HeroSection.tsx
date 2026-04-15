@@ -10,8 +10,8 @@ export function HeroSection() {
         transition={{ duration: 0.8 }}
         className="absolute top-8 left-8"
       >
-        <span className="text-base font-medium tracking-wide text-white/80">
-          tu web ya
+        <span className="text-base font-medium tracking-wide text-[#c8fb6a]">
+          tu web YA
         </span>
       </motion.div>
 
@@ -23,7 +23,7 @@ export function HeroSection() {
       >
         Tené tu web
         <br />
-        simple y lista ya
+        simple y lista, ya.
       </motion.h1>
 
       <motion.p
