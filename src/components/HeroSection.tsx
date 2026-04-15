@@ -19,7 +19,7 @@ export function HeroSection() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light leading-[1.05] max-w-4xl tracking-tight"
+        className="text-5xl md:text-7xl lg:text-8xl leading-[1.05] max-w-4xl tracking-tight font-sans font-semibold sm:text-7xl"
       >
         Tené tu web
         <br />
