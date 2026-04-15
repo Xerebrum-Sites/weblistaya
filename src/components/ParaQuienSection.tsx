@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const audiences = [
   "Emprendedores",
   "Profesionales independientes",
-  "Personas que venden servicios",
+  "Servicios",
   "Marcas personales",
 ];
 
@@ -41,7 +41,7 @@ export function ParaQuienSection() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mt-12 text-lg text-muted-foreground font-light leading-relaxed"
         >
-          Si necesitás mostrar lo que hacés y no tenés una web clara, esto es para vos.
+          Si necesitás mostrar lo que hacés y no tenés una web clara, te lo resolvemos.
         </motion.p>
       </div>
     </section>

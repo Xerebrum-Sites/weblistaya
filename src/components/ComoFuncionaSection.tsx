@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 
 const steps = [
-  { number: "01", text: "Me contás tu idea" },
-  { number: "02", text: "Ordeno el contenido" },
-  { number: "03", text: "Diseño tu web" },
-  { number: "04", text: "Te la entrego lista" },
+  { number: "01", text: "Nos contás tu idea" },
+  { number: "02", text: "Ordenamos el contenido" },
+  { number: "03", text: "Diseñamos tu web" },
+  { number: "04", text: "Te la entregamos lista" },
 ];
 
 export function ComoFuncionaSection() {

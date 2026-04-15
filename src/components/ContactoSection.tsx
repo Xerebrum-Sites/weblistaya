@@ -20,7 +20,7 @@ export function ContactoSection() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-lg text-muted-foreground font-light mb-10 leading-relaxed"
         >
-          Escribime y te cuento cómo puedo ayudarte.
+          Escribinos y te contamos cómo podemos ayudarte.
         </motion.p>
         <motion.form
           initial={{ opacity: 0, y: 15 }}
@@ -41,7 +41,7 @@ export function ContactoSection() {
             className="w-full bg-transparent border-b border-border pb-3 text-base font-light placeholder:text-muted-foreground/60 focus:outline-none focus:border-foreground transition-colors"
           />
           <textarea
-            placeholder="Contame qué necesitás"
+            placeholder="Contanos qué necesitás"
             rows={4}
             className="w-full bg-transparent border-b border-border pb-3 text-base font-light placeholder:text-muted-foreground/60 focus:outline-none focus:border-foreground transition-colors resize-none"
           />
