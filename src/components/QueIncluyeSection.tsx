@@ -17,11 +17,11 @@ export function QueIncluyeSection() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-sm tracking-widest uppercase text-muted-foreground mb-12"
+          className="text-sm tracking-widest uppercase text-muted-foreground mb-12 text-[#c8fb6a] font-semibold"
         >
           Qué incluye
         </motion.p>
-        <div className="space-y-6">
+        <div className="space-y-6 font-medium">
           {features.map((item, i) => (
             <motion.div
               key={item}
@@ -29,10 +29,10 @@ export function QueIncluyeSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="flex items-center gap-4"
+              className="flex items-center gap-4 font-medium"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-foreground shrink-0" />
-              <span className="text-xl font-light">{item}</span>
+              <span className="text-xl font-medium">{item}</span>
             </motion.div>
           ))}
         </div>

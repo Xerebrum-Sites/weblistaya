@@ -9,7 +9,7 @@ export function ContactoSection() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-sm tracking-widest uppercase text-muted-foreground mb-12"
+          className="text-sm tracking-widest uppercase text-muted-foreground mb-12 font-semibold text-[#c8fb6a]"
         >
           Contacto
         </motion.p>
@@ -18,7 +18,7 @@ export function ContactoSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-lg text-muted-foreground font-light mb-10 leading-relaxed"
+          className="text-lg text-muted-foreground mb-10 leading-relaxed font-semibold text-white"
         >
           Escribinos y te contamos cómo podemos ayudarte.
         </motion.p>
@@ -33,17 +33,17 @@ export function ContactoSection() {
           <input
             type="text"
             placeholder="Tu nombre"
-            className="w-full bg-transparent border-b border-border pb-3 text-base font-light placeholder:text-muted-foreground/60 focus:outline-none focus:border-foreground transition-colors"
+            className="w-full bg-transparent border-b border-border pb-3 text-base font-light placeholder:text-muted-foreground/60 focus:outline-none focus:border-foreground transition-colors text-white"
           />
           <input
             type="email"
             placeholder="Tu email"
-            className="w-full bg-transparent border-b border-border pb-3 text-base font-light placeholder:text-muted-foreground/60 focus:outline-none focus:border-foreground transition-colors"
+            className="w-full bg-transparent border-b border-border pb-3 text-base font-light placeholder:text-muted-foreground/60 focus:outline-none focus:border-foreground transition-colors text-white"
           />
           <textarea
             placeholder="Contanos qué necesitás"
             rows={4}
-            className="w-full bg-transparent border-b border-border pb-3 text-base font-light placeholder:text-muted-foreground/60 focus:outline-none focus:border-foreground transition-colors resize-none"
+            className="w-full bg-transparent border-b border-border pb-3 text-base font-light placeholder:text-muted-foreground/60 focus:outline-none focus:border-foreground transition-colors resize-none text-white"
           />
           <button
             type="submit"

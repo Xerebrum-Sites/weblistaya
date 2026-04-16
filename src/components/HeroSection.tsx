@@ -30,7 +30,7 @@ export function HeroSection() {
         initial={{ opacity: 0, y: 25 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.5 }}
-        className="mt-10 text-lg sm:text-xl text-white/60 max-w-lg font-light leading-relaxed"
+        className="mt-10 text-lg sm:text-xl text-white/60 max-w-lg leading-relaxed font-medium"
       >
         Te diseñamos una página clara y estética para que puedas mostrar y vender tu servicio sin vueltas.
       </motion.p>
@@ -40,7 +40,7 @@ export function HeroSection() {
         initial={{ opacity: 0, y: 25 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.8 }}
-        className="mt-14 inline-flex items-center justify-center rounded-full bg-white text-black px-10 py-4.5 text-base font-medium tracking-wide transition-all hover:bg-white/90 hover:scale-[1.02] active:scale-[0.98]"
+        className="mt-14 inline-flex items-center justify-center rounded-full text-black px-10 py-4.5 text-base font-medium tracking-wide transition-all hover:scale-[1.02] active:scale-[0.98] bg-[#c8fb6a]"
       >
         Quiero mi web
       </motion.a>

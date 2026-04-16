@@ -9,18 +9,18 @@ const steps = [
 
 export function ComoFuncionaSection() {
   return (
-    <section className="py-32 px-6">
+    <section className="py-32 px-6 bg-black">
       <div className="max-w-2xl mx-auto">
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-sm tracking-widest uppercase text-muted-foreground mb-16"
+          className="text-sm tracking-widest uppercase text-muted-foreground mb-16 font-semibold text-[#c8fb6a]"
         >
           Cómo funciona
         </motion.p>
-        <div className="space-y-12">
+        <div className="space-y-12 text-white">
           {steps.map((step, i) => (
             <motion.div
               key={step.number}
@@ -28,9 +28,9 @@ export function ComoFuncionaSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="flex items-baseline gap-6"
+              className="flex items-baseline gap-6 font-semibold"
             >
-              <span className="text-sm text-muted-foreground font-light tabular-nums">{step.number}</span>
+              <span className="text-sm text-muted-foreground tabular-nums font-semibold text-white">{step.number}</span>
               <span className="text-2xl sm:text-3xl font-light">{step.text}</span>
             </motion.div>
           ))}
