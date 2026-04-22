@@ -3,16 +3,18 @@ import { motion } from "framer-motion";
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-6 text-center bg-[oklch(0.12_0.01_260)] text-white overflow-hidden">
-      {/* Logo placeholder */}
+      {/* Logo */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
         className="absolute top-8 left-8"
       >
-        <span className="text-base font-medium tracking-wide text-[#c8fb6a]">
-          tu web YA
-        </span>
+        <img
+          src="/logo.png"
+          alt="tu web YA"
+          className="h-10 w-auto object-contain"
+        />
       </motion.div>
 
       <motion.h1
