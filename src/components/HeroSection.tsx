@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import logo from "@/assets/logo.png";
 
 export function HeroSection() {
   return (
@@ -11,7 +12,7 @@ export function HeroSection() {
         className="absolute top-8 left-8"
       >
         <img
-          src="/logo.png"
+          src={logo}
           alt="tu web YA"
           className="h-10 w-auto object-contain"
         />
