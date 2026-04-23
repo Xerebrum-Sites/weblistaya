@@ -32,7 +32,7 @@ export function QueIncluyeSection() {
               transition={{ duration: 0.5, delay: i * 0.08 }}
               className="flex items-center gap-4 font-medium"
             >
-              <span className="flex items-center justify-center w-10 h-10 rounded-full bg-[#c8fb6a]/10 text-[#c8fb6a] shrink-0">
+              <span className="flex items-center justify-center w-10 h-10 rounded-full bg-black text-[#c8fb6a] shrink-0">
                 <Icon className="w-5 h-5" strokeWidth={2} />
               </span>
               <span className="text-xl font-medium">{label}</span>
