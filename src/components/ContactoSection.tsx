@@ -2,8 +2,20 @@ import { motion } from "framer-motion";
 
 export function ContactoSection() {
   return (
-    <section id="contacto" className="py-32 px-6">
-      <div className="max-w-md mx-auto">
+    <section id="contacto" className="relative py-32 px-6 bg-black overflow-hidden">
+      <div
+        aria-hidden
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(200,251,106,0.35) 0%, rgba(200,251,106,0.12) 35%, rgba(0,0,0,0) 70%)",
+        }}
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 pointer-events-none bg-gradient-to-b from-black/40 via-transparent to-black"
+      />
+      <div className="relative max-w-md mx-auto">
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -18,7 +30,7 @@ export function ContactoSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-lg text-muted-foreground mb-10 leading-relaxed font-semibold text-black"
+          className="text-lg mb-10 leading-relaxed font-semibold text-white"
         >
           Escribinos y te contamos cómo podemos ayudarte.
         </motion.p>
