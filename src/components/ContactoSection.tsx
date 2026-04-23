@@ -18,7 +18,7 @@ export function ContactoSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-lg text-muted-foreground mb-10 leading-relaxed font-semibold text-white"
+          className="text-lg text-muted-foreground mb-10 leading-relaxed font-semibold text-black"
         >
           Escribinos y te contamos cómo podemos ayudarte.
         </motion.p>
