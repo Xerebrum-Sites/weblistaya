@@ -40,17 +40,17 @@ export function ContactoSection() {
           <input
             type="text"
             placeholder="Tu nombre"
-            className="w-full bg-transparent border-b border-border pb-3 text-base font-light placeholder:text-muted-foreground/60 focus:outline-none focus:border-foreground transition-colors text-white"
+            className="w-full bg-transparent border-b border-border pb-3 text-base font-light placeholder:text-white focus:outline-none focus:border-foreground transition-colors text-white"
           />
           <input
             type="email"
             placeholder="Tu email"
-            className="w-full bg-transparent border-b border-border pb-3 text-base font-light placeholder:text-muted-foreground/60 focus:outline-none focus:border-foreground transition-colors text-white"
+            className="w-full bg-transparent border-b border-border pb-3 text-base font-light placeholder:text-white focus:outline-none focus:border-foreground transition-colors text-white"
           />
           <textarea
             placeholder="Contanos qué necesitás"
             rows={4}
-            className="w-full bg-transparent border-b border-border pb-3 text-base font-light placeholder:text-muted-foreground/60 focus:outline-none focus:border-foreground transition-colors resize-none text-white"
+            className="w-full bg-transparent border-b border-border pb-3 text-base font-light placeholder:text-white focus:outline-none focus:border-foreground transition-colors resize-none text-white"
           />
           <button
             type="submit"
