@@ -28,9 +28,11 @@ export function ComoFuncionaSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="flex items-baseline gap-6 font-semibold"
+              className="flex items-center gap-6 font-semibold"
             >
-              <span className="text-sm text-muted-foreground tabular-nums font-semibold text-white">{step.number}</span>
+              <span className="flex items-center justify-center w-10 h-10 rounded-full bg-[#c8fb6a] text-white text-sm tabular-nums font-semibold shrink-0">
+                {step.number}
+              </span>
               <span className="text-2xl sm:text-3xl font-light">{step.text}</span>
             </motion.div>
           ))}
