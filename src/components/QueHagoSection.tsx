@@ -18,7 +18,7 @@ export function QueHagoSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-2xl sm:text-3xl font-light leading-relaxed"
+          className="text-2xl sm:text-3xl leading-relaxed font-semibold"
         >
           Diseñamos páginas web simples, pensadas para mostrar tu servicio de forma clara, ordenada y profesional.
         </motion.p>

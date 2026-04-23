@@ -9,7 +9,7 @@ export function CtaSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-2xl sm:text-3xl md:text-4xl font-light leading-relaxed"
+          className="text-2xl sm:text-3xl md:text-4xl leading-relaxed font-semibold"
         >
           Tu web puede estar lista en pocos días. Simple, clara y sin vueltas.
         </motion.p>
