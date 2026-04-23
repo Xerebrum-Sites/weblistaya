@@ -2,16 +2,14 @@ import { motion } from "framer-motion";
 
 export function ContactoSection() {
   return (
-    <section id="contacto" className="relative py-32 px-6 bg-black overflow-hidden">
-      <div
-        aria-hidden
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(200,251,106,0.18) 1px, transparent 1px), linear-gradient(90deg, rgba(200,251,106,0.18) 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
-        }}
-      />
+    <section
+      id="contacto"
+      className="relative py-32 px-6 overflow-hidden"
+      style={{
+        background:
+          "linear-gradient(135deg, #c8fb6a 0%, #000000 70%)",
+      }}
+    >
       <div className="relative max-w-md mx-auto">
         <motion.p
           initial={{ opacity: 0 }}
