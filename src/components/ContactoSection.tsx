@@ -7,13 +7,10 @@ export function ContactoSection() {
         aria-hidden
         className="absolute inset-0 pointer-events-none"
         style={{
-          background:
-            "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(200,251,106,0.35) 0%, rgba(200,251,106,0.12) 35%, rgba(0,0,0,0) 70%)",
+          backgroundImage:
+            "linear-gradient(rgba(200,251,106,0.18) 1px, transparent 1px), linear-gradient(90deg, rgba(200,251,106,0.18) 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
         }}
-      />
-      <div
-        aria-hidden
-        className="absolute inset-0 pointer-events-none bg-gradient-to-b from-black/40 via-transparent to-black"
       />
       <div className="relative max-w-md mx-auto">
         <motion.p
