@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
+import { Palette, LayoutList, Sparkles, Smartphone, Zap, type LucideIcon } from "lucide-react";
 
-const features = [
-  "Diseño personalizado",
-  "Estructura clara",
-  "Estética alineada a tu marca",
-  "Versión mobile",
-  "Entrega rápida",
+const features: { label: string; icon: LucideIcon }[] = [
+  { label: "Diseño personalizado", icon: Palette },
+  { label: "Estructura clara", icon: LayoutList },
+  { label: "Estética alineada a tu marca", icon: Sparkles },
+  { label: "Versión mobile", icon: Smartphone },
+  { label: "Entrega rápida", icon: Zap },
 ];
 
 export function QueIncluyeSection() {
@@ -22,17 +23,19 @@ export function QueIncluyeSection() {
           Qué incluye
         </motion.p>
         <div className="space-y-6 font-medium">
-          {features.map((item, i) => (
+          {features.map(({ label, icon: Icon }, i) => (
             <motion.div
-              key={item}
+              key={label}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
               className="flex items-center gap-4 font-medium"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-foreground shrink-0" />
-              <span className="text-xl font-medium">{item}</span>
+              <span className="flex items-center justify-center w-10 h-10 rounded-full bg-[#c8fb6a]/10 text-[#c8fb6a] shrink-0">
+                <Icon className="w-5 h-5" strokeWidth={2} />
+              </span>
+              <span className="text-xl font-medium">{label}</span>
             </motion.div>
           ))}
         </div>
