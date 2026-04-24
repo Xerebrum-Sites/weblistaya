@@ -21,7 +21,7 @@ export function CtaSection() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="mt-12 inline-flex items-center justify-center rounded-full bg-primary px-10 py-4.5 text-base font-medium text-primary-foreground tracking-wide transition-all hover:opacity-80 hover:scale-[1.02] active:scale-[0.98]"
         >
-          Escribinos ahora
+          Quiero empezar mi web hoy
         </motion.a>
       </div>
     </section>

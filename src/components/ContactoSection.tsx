@@ -56,7 +56,7 @@ export function ContactoSection() {
             type="submit"
             className="mt-4 rounded-full bg-primary px-8 py-3.5 text-sm font-medium text-primary-foreground tracking-wide transition-all hover:opacity-80"
           >
-            Enviar
+            Quiero mi presupuesto gratis
           </button>
         </motion.form>
       </div>
