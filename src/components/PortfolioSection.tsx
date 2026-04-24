@@ -5,8 +5,8 @@ import portfolio3 from "@/assets/portfolio-3.jpg";
 
 const projects = [
   { img: portfolio1, name: "Estudio Yoga Luz", category: "Bienestar" },
-  { img: portfolio2, name: "Mell Photography", category: "Fotografía" },
-  { img: portfolio3, name: "Coach Consultora", category: "Coaching" },
+  { img: portfolio2, name: "Panadería La Espiga", category: "Gastronomía" },
+  { img: portfolio3, name: "Martín Gómez Coach", category: "Fitness" },
 ];
 
 export function PortfolioSection() {
