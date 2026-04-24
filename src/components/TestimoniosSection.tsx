@@ -22,7 +22,7 @@ const testimonios = [
 export function TestimoniosSection() {
   return (
     <section className="py-32 px-6 bg-background">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-5xl mx-auto text-center">
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -37,7 +37,7 @@ export function TestimoniosSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-16 leading-tight max-w-2xl"
+          className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-16 leading-tight max-w-2xl mx-auto"
         >
           Clientes felices, webs que venden.
         </motion.h2>
@@ -49,7 +49,7 @@ export function TestimoniosSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-card rounded-2xl p-8 flex flex-col"
+              className="bg-card rounded-2xl p-8 flex flex-col items-center text-center"
             >
               <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, idx) => (
