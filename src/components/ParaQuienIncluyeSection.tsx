@@ -29,9 +29,9 @@ const features: { label: string; icon: LucideIcon }[] = [
 export function ParaQuienIncluyeSection() {
   return (
     <section className="py-32 px-6 bg-black text-white">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 md:divide-x divide-white/15">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 sm:divide-x divide-white/15">
         {/* Para quién es */}
-        <div className="md:pr-12 pb-16 md:pb-0 text-left">
+        <div className="sm:pr-8 md:pr-12 pb-16 sm:pb-0 text-left">
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -61,7 +61,7 @@ export function ParaQuienIncluyeSection() {
         </div>
 
         {/* Qué incluye */}
-        <div className="md:pl-12 pt-16 md:pt-0 border-t md:border-t-0 border-white/15 text-left">
+        <div className="sm:pl-8 md:pl-12 pt-16 sm:pt-0 border-t sm:border-t-0 border-white/15 text-left">
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
