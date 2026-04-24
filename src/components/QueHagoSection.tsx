@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import workspace from "@/assets/workspace.jpg";
+import clienteFeliz from "@/assets/cliente-feliz.jpg";
 
 export function QueHagoSection() {
   return (
@@ -40,8 +40,8 @@ export function QueHagoSection() {
           className="mt-16 overflow-hidden rounded-3xl"
         >
           <img
-            src={workspace}
-            alt="Espacio de trabajo con laptop y notas"
+            src={clienteFeliz}
+            alt="Cliente feliz viendo su nueva página web en una laptop"
             loading="lazy"
             width={1280}
             height={896}
