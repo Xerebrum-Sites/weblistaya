@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Star, Zap, CreditCard } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 export function HeroSection() {
@@ -38,15 +39,45 @@ export function HeroSection() {
         Te diseñamos una página clara y estética para que puedas mostrar y vender tu servicio sin vueltas.
       </motion.p>
 
-      <motion.a
-        href="#contacto"
+      <motion.div
         initial={{ opacity: 0, y: 25 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.8 }}
-        className="mt-14 inline-flex items-center justify-center rounded-full text-black px-10 py-4.5 text-base font-medium tracking-wide transition-all hover:scale-[1.02] active:scale-[0.98] bg-[#c8fb6a]"
+        transition={{ duration: 0.8, delay: 0.7 }}
+        className="mt-10 flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm text-white/70"
       >
-        Quiero mi web
-      </motion.a>
+        <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10">
+          <Star className="w-3.5 h-3.5 fill-[#c8fb6a] text-[#c8fb6a]" />
+          +30 webs entregadas
+        </span>
+        <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10">
+          <Zap className="w-3.5 h-3.5 text-[#c8fb6a]" />
+          Lista en 5 días
+        </span>
+        <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10">
+          <CreditCard className="w-3.5 h-3.5 text-[#c8fb6a]" />
+          Pago en cuotas
+        </span>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 25 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.9 }}
+        className="mt-10 flex flex-wrap items-center justify-center gap-3"
+      >
+        <a
+          href="#contacto"
+          className="inline-flex items-center justify-center rounded-full text-black px-8 py-4 text-base font-semibold tracking-wide transition-all hover:scale-[1.02] active:scale-[0.98] bg-[#c8fb6a]"
+        >
+          Quiero mi presupuesto gratis
+        </a>
+        <a
+          href="#portfolio"
+          className="inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-semibold tracking-wide transition-all hover:bg-white/10 border border-white/20 text-white"
+        >
+          Ver ejemplos
+        </a>
+      </motion.div>
 
       {/* Scroll indicator */}
       <motion.div
