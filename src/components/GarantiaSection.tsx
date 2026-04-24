@@ -22,7 +22,7 @@ const items = [
 export function GarantiaSection() {
   return (
     <section className="py-24 px-6 bg-background">
-      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
         {items.map((item, i) => (
           <motion.div
             key={item.title}
@@ -30,7 +30,7 @@ export function GarantiaSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="flex flex-col items-start gap-4"
+            className="flex flex-col items-center gap-4"
           >
             <span className="flex items-center justify-center w-12 h-12 rounded-full bg-black text-[#c8fb6a]">
               <item.icon className="w-6 h-6" strokeWidth={2} />

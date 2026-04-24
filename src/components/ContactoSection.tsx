@@ -10,7 +10,7 @@ export function ContactoSection() {
           "linear-gradient(135deg, #c8fb6a 0%, #000000 70%)",
       }}
     >
-      <div className="relative max-w-md mx-auto">
+      <div className="relative max-w-md mx-auto text-center">
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

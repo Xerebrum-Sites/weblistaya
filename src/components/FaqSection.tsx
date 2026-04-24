@@ -32,7 +32,7 @@ const faqs = [
 export function FaqSection() {
   return (
     <section className="py-32 px-6 bg-background">
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-2xl mx-auto text-center">
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -51,7 +51,7 @@ export function FaqSection() {
         >
           Resolvemos tus dudas.
         </motion.h2>
-        <Accordion type="single" collapsible className="w-full">
+        <Accordion type="single" collapsible className="w-full text-left">
           {faqs.map((faq, i) => (
             <AccordionItem key={i} value={`item-${i}`}>
               <AccordionTrigger className="text-left text-lg font-semibold py-6">

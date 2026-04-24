@@ -12,7 +12,7 @@ const projects = [
 export function PortfolioSection() {
   return (
     <section className="py-32 px-6 bg-background">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-5xl mx-auto text-center">
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -27,7 +27,7 @@ export function PortfolioSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-16 leading-tight max-w-2xl"
+          className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-16 leading-tight max-w-2xl mx-auto"
         >
           Webs reales, entregadas y en línea.
         </motion.h2>
@@ -51,7 +51,7 @@ export function PortfolioSection() {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
-              <div className="mt-4">
+              <div className="mt-4 text-center">
                 <p className="text-base font-semibold">{p.name}</p>
                 <p className="text-sm text-muted-foreground">{p.category}</p>
               </div>

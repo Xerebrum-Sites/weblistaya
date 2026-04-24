@@ -21,7 +21,7 @@ export function ParaQuienSection() {
         aria-hidden
         className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black"
       />
-      <div className="relative max-w-2xl mx-auto">
+      <div className="relative max-w-2xl mx-auto text-center">
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -31,15 +31,15 @@ export function ParaQuienSection() {
         >
           Para quién es
         </motion.p>
-        <div className="space-y-5 text-white">
+        <div className="space-y-5 text-white flex flex-col items-center">
           {audiences.map(({ label, icon: Icon }, i) => (
             <motion.div
               key={label}
-              initial={{ opacity: 0, x: -10 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="flex items-center gap-4"
+              className="flex items-center justify-center gap-4"
             >
               <span className="flex items-center justify-center w-10 h-10 rounded-full bg-black text-[#c8fb6a] shrink-0 ring-1 ring-[#c8fb6a]/40">
                 <Icon className="w-5 h-5" strokeWidth={2} />

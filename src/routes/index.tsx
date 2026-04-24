@@ -2,8 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { HeroSection } from "../components/HeroSection";
 import { QueHagoSection } from "../components/QueHagoSection";
 import { ParaQuienSection } from "../components/ParaQuienSection";
-import { QueIncluyeSection } from "../components/QueIncluyeSection";
-import { ComoFuncionaSection } from "../components/ComoFuncionaSection";
+import { IncluyeFuncionaSection } from "../components/IncluyeFuncionaSection";
 import { PortfolioSection } from "../components/PortfolioSection";
 import { TestimoniosSection } from "../components/TestimoniosSection";
 import { GarantiaSection } from "../components/GarantiaSection";
@@ -23,8 +22,7 @@ function Index() {
       <HeroSection />
       <QueHagoSection />
       <ParaQuienSection />
-      <QueIncluyeSection />
-      <ComoFuncionaSection />
+      <IncluyeFuncionaSection />
       <div id="portfolio">
         <PortfolioSection />
       </div>
