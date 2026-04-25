@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Mail } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import ctaImg from "@/assets/cta-emprendedor.jpg";
 
 export function CtaSection() {
@@ -25,25 +25,13 @@ export function CtaSection() {
             </p>
             <div className="mt-7 flex flex-col sm:flex-row flex-wrap gap-3">
               <a
-                href="#contacto"
-                className="inline-flex items-center justify-center gap-2 rounded-full px-6 h-12 text-sm sm:text-base font-semibold text-[#0B0F14] hover:-translate-y-0.5 transition-all"
-                style={{ background: "linear-gradient(135deg, #A3FF12 0%, #6EEB00 100%)" }}
-              >
-                Crear mi web ahora <ArrowRight className="w-4 h-4" />
-              </a>
-              <a
-                href="#contacto"
-                className="inline-flex items-center justify-center gap-2 rounded-full px-6 h-12 text-sm sm:text-base font-semibold text-white border border-white/20 hover:bg-white/10 transition-all"
-              >
-                <Mail className="w-4 h-4" /> Contacto
-              </a>
-              <a
                 href="https://wa.me/5491100000000?text=Hola!%20Quiero%20info%20sobre%20mi%20web."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-full px-6 h-12 text-sm sm:text-base font-semibold text-white border border-white/20 hover:bg-white/10 transition-all"
+                className="inline-flex items-center justify-center gap-2 rounded-full px-6 h-12 text-sm sm:text-base font-semibold text-[#0B0F14] hover:-translate-y-0.5 transition-all"
+                style={{ background: "linear-gradient(135deg, #A3FF12 0%, #6EEB00 100%)" }}
               >
-                WhatsApp
+                Escribinos por WhatsApp <ArrowRight className="w-4 h-4" />
               </a>
             </div>
           </div>
