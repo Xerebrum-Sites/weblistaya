@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Header } from "../components/Header";
 import { HeroSection } from "../components/HeroSection";
-import { QueHagoSection } from "../components/QueHagoSection";
-import { ParaQuienIncluyeSection } from "../components/ParaQuienIncluyeSection";
+import { BeneficiosSection } from "../components/BeneficiosSection";
 import { ComoFuncionaSection } from "../components/ComoFuncionaSection";
 import { PortfolioSection } from "../components/PortfolioSection";
 import { TestimoniosSection } from "../components/TestimoniosSection";
@@ -18,21 +18,21 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <main>
-      <HeroSection />
-      <QueHagoSection />
-      <ParaQuienIncluyeSection />
-      <ComoFuncionaSection />
-      <div id="portfolio">
+    <>
+      <Header />
+      <main>
+        <HeroSection />
+        <BeneficiosSection />
+        <ComoFuncionaSection />
         <PortfolioSection />
-      </div>
-      <TestimoniosSection />
-      <GarantiaSection />
-      <FaqSection />
-      <CtaSection />
-      <ContactoSection />
-      <Footer />
-      <WhatsAppButton />
-    </main>
+        <TestimoniosSection />
+        <GarantiaSection />
+        <FaqSection />
+        <CtaSection />
+        <ContactoSection />
+        <Footer />
+        <WhatsAppButton />
+      </main>
+    </>
   );
 }
