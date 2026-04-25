@@ -29,11 +29,11 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Tu web ya — Diseño web simple y profesional" },
-      { name: "description", content: "Diseño páginas web claras y estéticas para mostrar tu servicio de forma profesional. Simple, rápida y sin vueltas." },
-      { name: "author", content: "Tu web ya" },
-      { property: "og:title", content: "Tu web ya — Diseño web simple y profesional" },
-      { property: "og:description", content: "Páginas web simples para mostrar y vender tu servicio sin complicarte." },
+      { title: "Web Lista YA — Tu web profesional en pocos días" },
+      { name: "description", content: "Diseñamos tu sitio web rápido, simple y económico. Lista en días, sin complicaciones. Pensado para emprendedores y pymes." },
+      { name: "author", content: "Web Lista YA" },
+      { property: "og:title", content: "Web Lista YA — Tu web profesional en pocos días" },
+      { property: "og:description", content: "Rápido, simple y económico. Tu web lista en días, sin vueltas." },
       { property: "og:type", content: "website" },
     ],
     links: [
@@ -43,7 +43,7 @@ export const Route = createRootRoute({
       },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap",
       },
     ],
   }),
