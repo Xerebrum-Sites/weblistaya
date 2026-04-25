@@ -1,13 +1,12 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
 import portfolio1 from "@/assets/portfolio-1.jpg";
 import portfolio2 from "@/assets/portfolio-2.jpg";
 import portfolio3 from "@/assets/portfolio-3.jpg";
 
 const projects = [
-  { img: portfolio1, name: "Estudio Yoga Luz", category: "Bienestar", url: "estudioyogaluz.com.ar" },
-  { img: portfolio2, name: "Panadería La Espiga", category: "Gastronomía", url: "laespiga.com.ar" },
-  { img: portfolio3, name: "Martín Gómez Coach", category: "Fitness", url: "martingomezcoach.com" },
+  { img: portfolio1, name: "Martín Gómez", category: "Entrenador personal" },
+  { img: portfolio2, name: "Pizzería Don Carlo", category: "Pizzería artesanal" },
+  { img: portfolio3, name: "Bella Estética", category: "Estética femenina" },
 ];
 
 export function PortfolioSection() {
@@ -31,9 +30,8 @@ export function PortfolioSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {projects.map((p, i) => (
-            <motion.a
+            <motion.div
               key={p.name}
-              href="#contacto"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -49,20 +47,12 @@ export function PortfolioSection() {
                   height={600}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                 />
-                <span
-                  className="absolute top-3 right-3 inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/95 text-[#0B0F14] opacity-0 group-hover:opacity-100 transition-opacity"
-                >
-                  <ArrowUpRight className="w-4 h-4" />
-                </span>
               </div>
-              <div className="mt-4 flex items-start justify-between gap-3">
-                <div>
-                  <p className="font-display font-semibold text-[#0B0F14]">{p.name}</p>
-                  <p className="text-sm text-[#1F2937]/60">{p.category}</p>
-                </div>
-                <span className="text-xs font-medium text-[#6EEB00] mt-1">{p.url}</span>
+              <div className="mt-4">
+                <p className="font-display font-semibold text-[#0B0F14]">{p.name}</p>
+                <p className="text-sm text-[#1F2937]/60">{p.category}</p>
               </div>
-            </motion.a>
+            </motion.div>
           ))}
         </div>
       </div>

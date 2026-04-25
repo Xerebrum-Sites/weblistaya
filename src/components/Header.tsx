@@ -17,6 +17,7 @@ export function Header() {
           <a href="#beneficios" className="hover:text-black transition-colors">Beneficios</a>
           <a href="#proceso" className="hover:text-black transition-colors">Cómo funciona</a>
           <a href="#portfolio" className="hover:text-black transition-colors">Ejemplos</a>
+          <a href="#contacto" className="hover:text-black transition-colors">Contacto</a>
           <a href="#faq" className="hover:text-black transition-colors">FAQ</a>
         </nav>
         <a
