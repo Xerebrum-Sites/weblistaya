@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
-import { Zap, Check, DollarSign, ArrowRight, Sparkles, MousePointer2, Globe } from "lucide-react";
+import { Zap, Check, DollarSign, ArrowRight, Sparkles, Globe } from "lucide-react";
 import heroMockup from "@/assets/hero-mockup.jpg";
 
 export function HeroSection() {
@@ -279,8 +279,6 @@ export function HeroSection() {
         />
       </motion.div>
 
-      {/* Hidden import to satisfy linter for MousePointer2 */}
-      <span className="hidden"><MousePointer2 /></span>
     </section>
   );
 }
