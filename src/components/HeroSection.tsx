@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
-import { Zap, Check, ArrowRight, Sparkles, Globe, Mail } from "lucide-react";
+import { Zap, Check, ArrowRight, Sparkles, Globe, Rocket, Code2, Palette, MousePointer2 } from "lucide-react";
 import heroLaptop from "@/assets/hero-laptop.png";
 
 export function HeroSection() {
@@ -39,6 +39,15 @@ export function HeroSection() {
     { top: "58%", size: 3, dur: 3.5, delay: 2.1, color: "#6EEB00" },
     { top: "70%", size: 4, dur: 5.5, delay: 1, color: "#A3FF12" },
     { top: "84%", size: 3, dur: 4.2, delay: 0.3, color: "#6EEB00" },
+  ];
+
+  // Objetos flotantes alrededor del laptop (decorativos)
+  const floatingIcons = [
+    { Icon: Rocket, top: "5%", left: "8%", dur: 5, delay: 0, rotate: -12 },
+    { Icon: Code2, top: "15%", right: "10%", dur: 6, delay: 0.8, rotate: 10 },
+    { Icon: Palette, top: "55%", left: "4%", dur: 5.5, delay: 0.4, rotate: -6 },
+    { Icon: MousePointer2, top: "40%", right: "5%", dur: 6.5, delay: 1.2, rotate: 14 },
+    { Icon: Sparkles, top: "75%", left: "12%", dur: 4.8, delay: 0.6, rotate: 8 },
   ];
 
   return (
@@ -197,28 +206,22 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="mt-7 sm:mt-9 flex flex-col sm:flex-row flex-wrap gap-3 justify-center w-full max-w-2xl"
+          className="mt-7 sm:mt-9 flex flex-col items-center gap-3 w-full max-w-2xl"
         >
-          <a
-            href="#contacto"
-            className="inline-flex items-center justify-center gap-2 rounded-full px-6 sm:px-7 h-13 py-3.5 text-sm sm:text-base font-semibold text-[#0B0F14] shadow-[0_12px_30px_-8px_rgba(110,235,0,0.55)] hover:shadow-[0_16px_36px_-8px_rgba(110,235,0,0.7)] hover:-translate-y-0.5 transition-all"
-            style={{ background: "linear-gradient(135deg, #A3FF12 0%, #6EEB00 100%)" }}
-          >
-            Crear mi web ahora <ArrowRight className="w-4 h-4" />
-          </a>
-          <a
-            href="#contacto"
-            className="inline-flex items-center justify-center gap-2 rounded-full px-6 sm:px-7 h-13 py-3.5 text-sm sm:text-base font-semibold text-[#0B0F14] bg-white border border-black/10 hover:bg-[#0B0F14] hover:text-white hover:border-[#0B0F14] transition-all"
-          >
-            <Mail className="w-4 h-4" /> Contacto
-          </a>
           <a
             href="https://wa.me/5491100000000?text=Hola!%20Quiero%20info%20sobre%20mi%20web."
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-full px-6 sm:px-7 h-13 py-3.5 text-sm sm:text-base font-semibold text-[#0B0F14] bg-white border border-black/10 hover:bg-[#0B0F14] hover:text-white hover:border-[#0B0F14] transition-all"
+            className="inline-flex items-center justify-center gap-2 rounded-full px-7 sm:px-9 h-13 py-3.5 text-sm sm:text-base font-semibold text-[#0B0F14] shadow-[0_12px_30px_-8px_rgba(110,235,0,0.55)] hover:shadow-[0_16px_36px_-8px_rgba(110,235,0,0.7)] hover:-translate-y-0.5 transition-all"
+            style={{ background: "linear-gradient(135deg, #A3FF12 0%, #6EEB00 100%)" }}
           >
-            WhatsApp
+            Escribinos por WhatsApp <ArrowRight className="w-4 h-4" />
+          </a>
+          <a
+            href="#contacto"
+            className="text-xs sm:text-sm font-medium text-[#1F2937]/60 hover:text-[#0B0F14] underline-offset-4 hover:underline transition-colors"
+          >
+            o dejanos tu mensaje en el formulario
           </a>
         </motion.div>
 
@@ -241,6 +244,30 @@ export function HeroSection() {
 
         {/* LAPTOP STAGE */}
         <div className="relative w-full mt-10 sm:mt-14 max-w-4xl">
+          {/* Floating decorative icons around the laptop */}
+          {floatingIcons.map(({ Icon, top, left, right, dur, delay, rotate }, i) => (
+            <motion.div
+              key={`float-${i}`}
+              aria-hidden
+              initial={{ opacity: 0, scale: 0.6 }}
+              animate={
+                reduce
+                  ? { opacity: 0.8, scale: 1 }
+                  : { opacity: 1, scale: 1, y: [0, -14, 0], rotate: [rotate, rotate + 6, rotate] }
+              }
+              transition={{
+                opacity: { duration: 0.6, delay: 0.8 + i * 0.1 },
+                scale: { duration: 0.6, delay: 0.8 + i * 0.1 },
+                y: { duration: dur, repeat: Infinity, ease: "easeInOut", delay },
+                rotate: { duration: dur, repeat: Infinity, ease: "easeInOut", delay },
+              }}
+              className="absolute z-10 hidden sm:flex items-center justify-center w-11 h-11 rounded-2xl bg-white border border-black/5 shadow-[0_15px_30px_-12px_rgba(11,15,20,0.25)]"
+              style={{ top, left, right }}
+            >
+              <Icon className="w-5 h-5 text-[#0B0F14]" strokeWidth={2.2} />
+            </motion.div>
+          ))}
+
           <div
             aria-hidden
             className="absolute inset-x-[10%] bottom-[10%] h-24 blur-3xl opacity-60 pointer-events-none"
