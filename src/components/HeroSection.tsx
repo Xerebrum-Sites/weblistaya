@@ -171,6 +171,69 @@ export function HeroSection() {
           />
         ))}
 
+        {/* Puntos que frenan: se mueven, paran y siguen */}
+        {pulseDots.map((p, i) => (
+          <motion.span
+            key={`pulse-${i}`}
+            aria-hidden
+            animate={
+              reduce
+                ? { opacity: 0.5 }
+                : {
+                    scale: [0.6, 1.4, 1.4, 0.6],
+                    opacity: [0, 0.9, 0.9, 0],
+                    y: [0, -18, -18, 0],
+                  }
+            }
+            transition={{
+              duration: p.dur,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: p.delay,
+              times: [0, 0.4, 0.6, 1],
+            }}
+            className="absolute rounded-full"
+            style={{
+              top: p.top,
+              left: p.left,
+              width: p.size,
+              height: p.size,
+              background: "#A3FF12",
+              boxShadow: "0 0 16px #A3FF12",
+            }}
+          />
+        ))}
+
+        {/* Comet trails: 3 puntos siguiéndose */}
+        {trails.map((t, i) => (
+          <div key={`trail-${i}`} aria-hidden className="absolute inset-x-0" style={{ top: t.top }}>
+            {[0, 0.15, 0.3].map((offset, j) => (
+              <motion.span
+                key={`trail-${i}-${j}`}
+                initial={{ x: "-10vw", opacity: 0 }}
+                animate={
+                  reduce
+                    ? { opacity: 0.4 }
+                    : { x: ["-10vw", "110vw"], opacity: [0, 0.7 - j * 0.2, 0.7 - j * 0.2, 0] }
+                }
+                transition={{
+                  duration: t.dur,
+                  repeat: Infinity,
+                  ease: "linear",
+                  delay: t.delay + offset,
+                }}
+                className="absolute rounded-full"
+                style={{
+                  width: 4 - j,
+                  height: 4 - j,
+                  background: "#6EEB00",
+                  boxShadow: `0 0 ${10 - j * 2}px #6EEB00`,
+                }}
+              />
+            ))}
+          </div>
+        ))}
+
         <div
           className="absolute inset-0 opacity-40"
           style={{
