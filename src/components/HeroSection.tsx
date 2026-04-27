@@ -9,7 +9,6 @@ import {
   Rocket,
   Heart,
   ShoppingBag,
-  Star,
   MessageCircle,
   TrendingUp,
   Smile,
@@ -78,7 +77,7 @@ export function HeroSection() {
   const floatingIcons = [
     { Icon: Heart, top: "30%", left: "-2%", dur: 5, delay: 0, rotate: -10, color: "#FF6B9D" },
     { Icon: ShoppingBag, top: "44%", right: "-2%", dur: 5.5, delay: 0.6, rotate: 8, color: "#6EEB00" },
-    { Icon: Star, top: "62%", left: "-3%", dur: 4.8, delay: 0.3, rotate: -6, color: "#FFC107" },
+    { Icon: Sparkles, top: "62%", left: "-3%", dur: 4.8, delay: 0.3, rotate: -6, color: "#FFC107" },
     { Icon: Smile, top: "72%", right: "0%", dur: 6, delay: 1, rotate: 12, color: "#A3FF12" },
     { Icon: Sparkles, top: "82%", left: "20%", dur: 4.5, delay: 0.8, rotate: 6, color: "#6EEB00" },
     { Icon: Rocket, top: "85%", right: "20%", dur: 5.2, delay: 1.4, rotate: -8, color: "#0B0F14" },

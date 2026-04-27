@@ -17,8 +17,8 @@ const projects = [
 
 export function PortfolioSection() {
   return (
-    <section id="portfolio" className="py-20 sm:py-28 px-4 sm:px-6 bg-[#F5F7FA]">
-      <div className="max-w-6xl mx-auto">
+    <section id="portfolio" className="py-20 sm:py-28 bg-[#F5F7FA] overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <p className="text-xs tracking-[0.2em] uppercase text-[#6EEB00] font-bold mb-4">
             Trabajos recientes
@@ -33,38 +33,37 @@ export function PortfolioSection() {
             Webs reales, ya online y vendiendo.
           </motion.h2>
         </div>
-
-        <div className="-mx-4 sm:-mx-6 px-4 sm:px-6 overflow-x-auto scroll-smooth snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-          <div className="flex gap-5 sm:gap-6 pb-4">
-            {projects.map((p, i) => (
-              <motion.div
-                key={p.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.05 }}
-                className="group shrink-0 snap-start w-[78vw] sm:w-[360px] md:w-[400px]"
-              >
-                <div className="relative overflow-hidden rounded-2xl bg-white border border-black/5 aspect-[4/3] shadow-sm group-hover:shadow-xl transition-shadow">
-                  <img
-                    src={p.img}
-                    alt={`Web de ${p.name}`}
-                    loading="lazy"
-                    width={800}
-                    height={600}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                  />
-                </div>
-                <div className="mt-4">
-                  <p className="font-display font-semibold text-[#0B0F14]">{p.name}</p>
-                  <p className="text-sm text-[#1F2937]/60">{p.category}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-        <p className="mt-4 text-center text-xs text-[#1F2937]/50 sm:hidden">Deslizá para ver más →</p>
       </div>
+
+      <div
+        className="overflow-x-auto scroll-smooth snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+        style={{ scrollPaddingLeft: "1rem" }}
+      >
+        <div className="flex gap-5 sm:gap-6 px-4 sm:px-6 pb-6 w-max">
+          {projects.map((p) => (
+            <div
+              key={p.name}
+              className="group shrink-0 snap-start w-[78vw] sm:w-[360px] md:w-[400px]"
+            >
+              <div className="relative overflow-hidden rounded-2xl bg-white border border-black/5 aspect-[4/3] shadow-sm group-hover:shadow-xl transition-shadow">
+                <img
+                  src={p.img}
+                  alt={`Web de ${p.name}`}
+                  loading="lazy"
+                  width={800}
+                  height={600}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                />
+              </div>
+              <div className="mt-4">
+                <p className="font-display font-semibold text-[#0B0F14]">{p.name}</p>
+                <p className="text-sm text-[#1F2937]/60">{p.category}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <p className="mt-2 text-center text-xs text-[#1F2937]/50 sm:hidden">Deslizá para ver más →</p>
     </section>
   );
 }
