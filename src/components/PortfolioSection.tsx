@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import pizzeria from "@/assets/portfolio-pizzeria.jpg";
 import panaderia from "@/assets/portfolio-panaderia.jpg";
 import peluqueria from "@/assets/portfolio-peluqueria.jpg";
@@ -16,12 +16,28 @@ const projects = [
   { img: electricista, name: "Electricista Rojas", category: "Electricista matriculado" },
 ];
 
+const trackProjects = [...projects, ...projects.slice(0, 3)];
+
 export function PortfolioSection() {
+  const carouselRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const visibleProjects = useMemo(
-    () => [0, 1, 2].map((offset) => projects[(activeIndex + offset) % projects.length]),
-    [activeIndex],
-  );
+  const [containerWidth, setContainerWidth] = useState(0);
+  const [withTransition, setWithTransition] = useState(true);
+
+  const gap = containerWidth >= 640 ? 24 : 20;
+  const cardWidth = containerWidth >= 768 ? (containerWidth - gap * 2) / 3 : containerWidth;
+  const offsetX = activeIndex * (cardWidth + gap);
+
+  useEffect(() => {
+    if (!carouselRef.current) return;
+
+    const resizeObserver = new ResizeObserver(([entry]) => {
+      setContainerWidth(entry.contentRect.width);
+    });
+
+    resizeObserver.observe(carouselRef.current);
+    return () => resizeObserver.disconnect();
+  }, []);
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -30,6 +46,18 @@ export function PortfolioSection() {
 
     return () => window.clearInterval(timer);
   }, []);
+
+  useEffect(() => {
+    if (activeIndex !== projects.length) return;
+
+    const resetTimer = window.setTimeout(() => {
+      setWithTransition(false);
+      setActiveIndex(0);
+      window.requestAnimationFrame(() => setWithTransition(true));
+    }, 620);
+
+    return () => window.clearTimeout(resetTimer);
+  }, [activeIndex]);
 
   return (
     <section id="portfolio" className="py-20 sm:py-28 bg-[#F5F7FA] overflow-hidden">
@@ -50,36 +78,34 @@ export function PortfolioSection() {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 overflow-hidden">
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 pb-3">
-          <AnimatePresence initial={false} mode="popLayout">
-            {visibleProjects.map((p) => (
-              <motion.div
-              key={p.name}
-              layout
-              initial={{ opacity: 0, x: 80, scale: 0.98 }}
-              animate={{ opacity: 1, x: 0, scale: 1 }}
-              exit={{ opacity: 0, x: -80, scale: 0.98 }}
-              transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-              className="group min-w-0"
+      <div ref={carouselRef} className="max-w-6xl mx-auto px-4 sm:px-6 overflow-hidden">
+        <motion.div
+          animate={{ x: -offsetX }}
+          transition={withTransition ? { duration: 0.62, ease: [0.22, 1, 0.36, 1] } : { duration: 0 }}
+          className="flex gap-5 sm:gap-6 pb-3 will-change-transform"
+        >
+          {trackProjects.map((p, index) => (
+            <div
+              key={`${p.name}-${index}`}
+              className="group shrink-0 min-w-0"
+              style={{ width: cardWidth || undefined }}
             >
               <div className="relative overflow-hidden rounded-2xl bg-white border border-black/5 aspect-[4/3] shadow-sm group-hover:shadow-xl transition-shadow">
                 <img
                   src={p.img}
                   alt={`Web de ${p.name}`}
-                  loading="lazy"
-                  width={800}
-                  height={600}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  loading="eager"
+                  width={1024}
+                  height={768}
+                  className="w-full h-full object-cover scale-[1.08] transition-transform duration-500 group-hover:scale-[1.12]"
                 />
               </div>
               <div className="mt-4">
                 <p className="font-display font-semibold text-[#0B0F14]">{p.name}</p>
                 <p className="text-sm text-[#1F2937]/60">{p.category}</p>
               </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
+            </div>
+          ))}
         </motion.div>
       </div>
     </section>
