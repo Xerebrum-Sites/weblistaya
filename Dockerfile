@@ -1,4 +1,4 @@
-# ---------- BUILD ----------
+# ---------- BUILD STAGE ----------
 FROM node:22-alpine AS builder
 
 WORKDIR /app
@@ -10,9 +10,13 @@ COPY . .
 RUN npm run build
 
 
-# ---------- SERVE STATIC ----------
+# ---------- PRODUCTION STAGE ----------
 FROM nginx:alpine
 
+# Borramos config default
+RUN rm -rf /usr/share/nginx/html/*
+
+# Copiamos SOLO el client build (no el server)
 COPY --from=builder /app/dist/client /usr/share/nginx/html
 
 EXPOSE 80
