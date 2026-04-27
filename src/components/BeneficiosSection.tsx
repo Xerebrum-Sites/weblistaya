@@ -63,7 +63,7 @@ export function BeneficiosSection() {
               >
                 <b.icon className="w-6 h-6" strokeWidth={2.25} />
               </div>
-              <span className="inline-block text-[11px] font-bold tracking-wider uppercase text-[#6EEB00] mb-2">
+              <span className="inline-block text-[10px] font-bold tracking-wider uppercase text-[#6EEB00] mt-4 mb-2">
                 {b.highlight}
               </span>
               <h3 className="font-display font-bold text-2xl text-[#0B0F14] mb-2">{b.title}</h3>
