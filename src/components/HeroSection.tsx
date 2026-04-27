@@ -485,20 +485,6 @@ export function HeroSection() {
             </div>
           </motion.div>
 
-          {/* TOP CENTER — rating estrellitas */}
-          <motion.div
-            style={{ y: yBlockTL }}
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.3 }}
-            className="absolute top-[-3%] left-1/2 -translate-x-1/2 z-20 hidden md:flex items-center gap-1.5 bg-white rounded-full px-3 py-1.5 shadow-[0_20px_40px_-15px_rgba(11,15,20,0.25)] border border-black/5"
-          >
-            {[0, 1, 2, 3, 4].map((i) => (
-              <Star key={i} className="w-3 h-3 fill-[#FFC107] text-[#FFC107]" />
-            ))}
-            <span className="text-[11px] font-display font-semibold text-[#0B0F14] ml-1">5.0</span>
-          </motion.div>
-
           {/* Laptop transparent */}
           <motion.div
             style={{ y: yLaptop, scale: scaleLaptop }}
