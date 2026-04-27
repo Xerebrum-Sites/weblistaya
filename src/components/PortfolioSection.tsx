@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useEffect, useMemo, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import pizzeria from "@/assets/portfolio-pizzeria.jpg";
 import panaderia from "@/assets/portfolio-panaderia.jpg";
 import peluqueria from "@/assets/portfolio-peluqueria.jpg";
@@ -16,6 +17,20 @@ const projects = [
 ];
 
 export function PortfolioSection() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const visibleProjects = useMemo(
+    () => [0, 1, 2].map((offset) => projects[(activeIndex + offset) % projects.length]),
+    [activeIndex],
+  );
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActiveIndex((current) => (current + 1) % projects.length);
+    }, 2800);
+
+    return () => window.clearInterval(timer);
+  }, []);
+
   return (
     <section id="portfolio" className="py-20 sm:py-28 bg-[#F5F7FA] overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -35,15 +50,18 @@ export function PortfolioSection() {
         </div>
       </div>
 
-      <div
-        className="overflow-x-auto scroll-smooth snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
-        style={{ scrollPaddingLeft: "1rem" }}
-      >
-        <div className="flex gap-5 sm:gap-6 px-4 sm:px-6 pb-6 w-max">
-          {projects.map((p) => (
-            <div
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 overflow-hidden">
+        <motion.div layout className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 pb-3">
+          <AnimatePresence initial={false} mode="popLayout">
+            {visibleProjects.map((p) => (
+              <motion.div
               key={p.name}
-              className="group shrink-0 snap-start w-[78vw] sm:w-[360px] md:w-[400px]"
+              layout
+              initial={{ opacity: 0, x: 80, scale: 0.98 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              exit={{ opacity: 0, x: -80, scale: 0.98 }}
+              transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+              className="group min-w-0"
             >
               <div className="relative overflow-hidden rounded-2xl bg-white border border-black/5 aspect-[4/3] shadow-sm group-hover:shadow-xl transition-shadow">
                 <img
@@ -59,11 +77,11 @@ export function PortfolioSection() {
                 <p className="font-display font-semibold text-[#0B0F14]">{p.name}</p>
                 <p className="text-sm text-[#1F2937]/60">{p.category}</p>
               </div>
-            </div>
-          ))}
-        </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
-      <p className="mt-2 text-center text-xs text-[#1F2937]/50 sm:hidden">Deslizá para ver más →</p>
     </section>
   );
 }
