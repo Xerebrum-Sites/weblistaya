@@ -20,7 +20,7 @@ export function ComoFuncionaSection() {
         <div className="text-center max-w-2xl mx-auto mb-14">
           <p className="text-xs tracking-[0.2em] uppercase font-bold mb-4 text-[#A3FF12]">Cómo funciona</p>
           <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl leading-[1.1]">
-            Cuatro pasos. Cero complicaciones.
+            Cuatro pasos.<br />Cero complicaciones.
           </h2>
         </div>
 
