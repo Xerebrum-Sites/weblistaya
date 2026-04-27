@@ -323,7 +323,7 @@ export function HeroSection() {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
-            className="absolute bottom-[12%] left-[-2%] sm:left-[4%] z-20 hidden md:flex items-center gap-2 bg-[#0B0F14] text-white rounded-2xl px-4 py-3 shadow-[0_20px_40px_-15px_rgba(11,15,20,0.5)]"
+            className="absolute bottom-[2%] left-[-2%] sm:left-[4%] z-20 hidden md:flex items-center gap-2 bg-[#0B0F14] text-white rounded-2xl px-4 py-3 shadow-[0_20px_40px_-15px_rgba(11,15,20,0.5)]"
           >
             <Globe className="w-4 h-4 text-[#A3FF12]" />
             <p className="text-sm font-display font-semibold">Hecho en Argentina</p>
