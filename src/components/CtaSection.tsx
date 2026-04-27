@@ -38,11 +38,20 @@ export function CtaSection() {
           <div className="relative min-h-[220px] sm:min-h-[300px] lg:min-h-[460px] order-1 lg:order-2">
             <img
               src={ctaImg}
-              alt="Emprendedora feliz con su nueva web"
+              alt=""
+              aria-hidden="true"
               loading="lazy"
               width={1600}
               height={1100}
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover blur-xl scale-110 opacity-50"
+            />
+            <img
+              src={ctaImg}
+              alt="Entrenador argentino feliz en su gimnasio"
+              loading="lazy"
+              width={1600}
+              height={1100}
+              className="absolute inset-0 w-full h-full object-contain object-center"
             />
             <div
               aria-hidden
