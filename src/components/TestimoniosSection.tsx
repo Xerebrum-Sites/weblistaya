@@ -31,7 +31,7 @@ export function TestimoniosSection() {
             Lo que dicen
           </p>
           <h2 className="font-display font-bold text-[#0B0F14] text-3xl sm:text-4xl md:text-5xl leading-[1.1]">
-            Clientes felices, webs que venden.
+            Clientes felices, <br />webs que venden.
           </h2>
         </div>
 

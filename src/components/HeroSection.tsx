@@ -232,7 +232,7 @@ export function HeroSection() {
           className="mt-7 flex flex-wrap items-center justify-center gap-x-5 sm:gap-x-6 gap-y-2 text-xs sm:text-sm text-[#1F2937]/70"
         >
           <span className="flex items-center gap-2">
-            <Zap className="w-4 h-4 text-[#6EEB00]" /> Lista en 5 días
+            <Zap className="w-4 h-4 text-[#6EEB00]" /> Lista en 7 días
           </span>
           <span className="flex items-center gap-2">
             <Check className="w-4 h-4 text-[#6EEB00]" /> +30 webs entregadas
@@ -313,7 +313,7 @@ export function HeroSection() {
             </span>
             <div className="text-left">
               <p className="text-[11px] text-[#1F2937]/60 leading-none">Entregada</p>
-              <p className="text-sm font-display font-semibold text-[#0B0F14]">en 5 días</p>
+              <p className="text-sm font-display font-semibold text-[#0B0F14]">en 7 días</p>
             </div>
           </motion.div>
 
