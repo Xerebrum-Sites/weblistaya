@@ -296,7 +296,9 @@ export function HeroSection() {
           transition={{ duration: 0.7, delay: 0.25 }}
           className="mt-5 sm:mt-6 text-base sm:text-lg md:text-xl text-[#1F2937]/70 max-w-2xl leading-relaxed px-2"
         >
-          Diseñamos tu sitio rápido, simple y económico. Sin vueltas, nos encargamos de todo.
+          Diseñamos tu sitio rápido, simple y económico.
+          <br />
+          Sin vueltas, nos encargamos de todo.
         </motion.p>
 
         <motion.div
