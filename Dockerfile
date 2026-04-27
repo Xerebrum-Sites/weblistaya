@@ -30,4 +30,4 @@ COPY --from=builder /app/dist ./dist
 EXPOSE 3000
 
 # Comando de inicio (TanStack Start SSR)
-CMD ["npm", "run", "preview"]
+CMD ["npm", "run", "preview", "--", "--host", "0.0.0.0", "--port", "3000"]
