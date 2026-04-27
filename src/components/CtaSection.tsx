@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import ctaImg from "@/assets/cta-emprendedor.jpg";
+import ctaImg from "@/assets/cta-entrenadora-plancha.jpg";
 
 export function CtaSection() {
   return (
@@ -35,27 +35,18 @@ export function CtaSection() {
               </a>
             </div>
           </div>
-          <div className="relative min-h-[220px] sm:min-h-[300px] lg:min-h-[460px] order-1 lg:order-2">
+          <div className="relative min-h-[220px] sm:min-h-[300px] lg:min-h-[460px] order-1 lg:order-2 bg-[#0B0F14]">
             <img
               src={ctaImg}
-              alt=""
-              aria-hidden="true"
+              alt="Entrenadora argentina haciendo plancha en su gimnasio"
               loading="lazy"
               width={1600}
-              height={1100}
-              className="absolute inset-0 w-full h-full object-cover blur-xl scale-110 opacity-50"
-            />
-            <img
-              src={ctaImg}
-              alt="Entrenador argentino feliz en su gimnasio"
-              loading="lazy"
-              width={1600}
-              height={1100}
-              className="absolute inset-0 w-full h-full object-contain object-center"
+              height={1000}
+              className="absolute inset-0 w-full h-full object-cover object-[58%_45%]"
             />
             <div
               aria-hidden
-              className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#0B0F14] via-[#0B0F14]/40 lg:via-transparent to-transparent"
+              className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#0B0F14] via-[#0B0F14]/35 lg:via-[#0B0F14]/10 to-transparent"
             />
           </div>
         </motion.div>
