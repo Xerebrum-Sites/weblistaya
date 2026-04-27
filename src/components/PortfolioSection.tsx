@@ -41,7 +41,7 @@ export function PortfolioSection() {
 
   useEffect(() => {
     const timer = window.setInterval(() => {
-      setActiveIndex((current) => (current + 1) % projects.length);
+      setActiveIndex((current) => current + 1);
     }, 2800);
 
     return () => window.clearInterval(timer);
