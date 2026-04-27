@@ -1,6 +1,19 @@
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
-import { Zap, Check, ArrowRight, Sparkles, Globe, Rocket, Code2, Palette, MousePointer2 } from "lucide-react";
+import {
+  Zap,
+  Check,
+  ArrowRight,
+  Sparkles,
+  Globe,
+  Rocket,
+  Heart,
+  ShoppingBag,
+  Star,
+  MessageCircle,
+  TrendingUp,
+  Smile,
+} from "lucide-react";
 import heroLaptop from "@/assets/hero-laptop.png";
 
 export function HeroSection() {
@@ -24,30 +37,51 @@ export function HeroSection() {
   const yBlockBR = useTransform(scrollYProgress, [0, 1], reduce ? [0, 0] : [0, -150]);
 
   const speedLines = [
-    { top: "12%", w: "22%", delay: 0, dur: 3.2, op: 0.35 },
-    { top: "22%", w: "14%", delay: 1.1, dur: 2.6, op: 0.25 },
-    { top: "38%", w: "30%", delay: 0.4, dur: 4, op: 0.3 },
-    { top: "62%", w: "18%", delay: 1.8, dur: 3, op: 0.2 },
-    { top: "78%", w: "26%", delay: 0.7, dur: 3.6, op: 0.28 },
-    { top: "88%", w: "12%", delay: 2.2, dur: 2.4, op: 0.22 },
+    { top: "10%", w: "22%", delay: 0, dur: 3.2, op: 0.35 },
+    { top: "20%", w: "14%", delay: 1.1, dur: 2.6, op: 0.25 },
+    { top: "34%", w: "30%", delay: 0.4, dur: 4, op: 0.3 },
+    { top: "60%", w: "18%", delay: 1.8, dur: 3, op: 0.2 },
+    { top: "76%", w: "26%", delay: 0.7, dur: 3.6, op: 0.28 },
+    { top: "90%", w: "12%", delay: 2.2, dur: 2.4, op: 0.22 },
   ];
 
+  // Puntos rápidos atravesando la pantalla
   const dots = [
-    { top: "18%", size: 4, dur: 5, delay: 0, color: "#A3FF12" },
-    { top: "30%", size: 3, dur: 4, delay: 1.5, color: "#6EEB00" },
-    { top: "48%", size: 5, dur: 6, delay: 0.6, color: "#A3FF12" },
-    { top: "58%", size: 3, dur: 3.5, delay: 2.1, color: "#6EEB00" },
-    { top: "70%", size: 4, dur: 5.5, delay: 1, color: "#A3FF12" },
-    { top: "84%", size: 3, dur: 4.2, delay: 0.3, color: "#6EEB00" },
+    { top: "16%", size: 4, dur: 5, delay: 0, color: "#A3FF12" },
+    { top: "28%", size: 3, dur: 4, delay: 1.5, color: "#6EEB00" },
+    { top: "46%", size: 5, dur: 6, delay: 0.6, color: "#A3FF12" },
+    { top: "56%", size: 3, dur: 3.5, delay: 2.1, color: "#6EEB00" },
+    { top: "68%", size: 4, dur: 5.5, delay: 1, color: "#A3FF12" },
+    { top: "82%", size: 3, dur: 4.2, delay: 0.3, color: "#6EEB00" },
+    { top: "24%", size: 3, dur: 7, delay: 2.5, color: "#A3FF12" },
+    { top: "52%", size: 4, dur: 4.8, delay: 3, color: "#6EEB00" },
+    { top: "74%", size: 3, dur: 5.2, delay: 0.9, color: "#A3FF12" },
   ];
 
-  // Objetos flotantes alrededor del laptop (decorativos)
+  // Puntos que frenan y se mueven con stagger (diferentes velocidades)
+  const pulseDots = [
+    { top: "14%", left: "8%", size: 6, dur: 3, delay: 0 },
+    { top: "32%", left: "92%", size: 5, dur: 4, delay: 1 },
+    { top: "50%", left: "5%", size: 7, dur: 3.5, delay: 0.5 },
+    { top: "66%", left: "94%", size: 5, dur: 4.5, delay: 2 },
+    { top: "82%", left: "10%", size: 6, dur: 3.2, delay: 1.5 },
+  ];
+
+  // Trios de puntos siguiéndose (efecto comet trail)
+  const trails = [
+    { top: "26%", delay: 0, dur: 6 },
+    { top: "54%", delay: 2, dur: 7 },
+    { top: "80%", delay: 4, dur: 5.5 },
+  ];
+
+  // Iconos flotantes alrededor del laptop — posiciones reorganizadas para no solaparse con bloques
   const floatingIcons = [
-    { Icon: Rocket, top: "5%", left: "8%", dur: 5, delay: 0, rotate: -12 },
-    { Icon: Code2, top: "15%", right: "10%", dur: 6, delay: 0.8, rotate: 10 },
-    { Icon: Palette, top: "55%", left: "4%", dur: 5.5, delay: 0.4, rotate: -6 },
-    { Icon: MousePointer2, top: "40%", right: "5%", dur: 6.5, delay: 1.2, rotate: 14 },
-    { Icon: Sparkles, top: "75%", left: "12%", dur: 4.8, delay: 0.6, rotate: 8 },
+    { Icon: Heart, top: "30%", left: "-2%", dur: 5, delay: 0, rotate: -10, color: "#FF6B9D" },
+    { Icon: ShoppingBag, top: "44%", right: "-2%", dur: 5.5, delay: 0.6, rotate: 8, color: "#6EEB00" },
+    { Icon: Star, top: "62%", left: "-3%", dur: 4.8, delay: 0.3, rotate: -6, color: "#FFC107" },
+    { Icon: Smile, top: "72%", right: "0%", dur: 6, delay: 1, rotate: 12, color: "#A3FF12" },
+    { Icon: Sparkles, top: "82%", left: "20%", dur: 4.5, delay: 0.8, rotate: 6, color: "#6EEB00" },
+    { Icon: Rocket, top: "85%", right: "20%", dur: 5.2, delay: 1.4, rotate: -8, color: "#0B0F14" },
   ];
 
   return (
@@ -135,6 +169,69 @@ export function HeroSection() {
               boxShadow: `0 0 12px ${d.color}`,
             }}
           />
+        ))}
+
+        {/* Puntos que frenan: se mueven, paran y siguen */}
+        {pulseDots.map((p, i) => (
+          <motion.span
+            key={`pulse-${i}`}
+            aria-hidden
+            animate={
+              reduce
+                ? { opacity: 0.5 }
+                : {
+                    scale: [0.6, 1.4, 1.4, 0.6],
+                    opacity: [0, 0.9, 0.9, 0],
+                    y: [0, -18, -18, 0],
+                  }
+            }
+            transition={{
+              duration: p.dur,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: p.delay,
+              times: [0, 0.4, 0.6, 1],
+            }}
+            className="absolute rounded-full"
+            style={{
+              top: p.top,
+              left: p.left,
+              width: p.size,
+              height: p.size,
+              background: "#A3FF12",
+              boxShadow: "0 0 16px #A3FF12",
+            }}
+          />
+        ))}
+
+        {/* Comet trails: 3 puntos siguiéndose */}
+        {trails.map((t, i) => (
+          <div key={`trail-${i}`} aria-hidden className="absolute inset-x-0" style={{ top: t.top }}>
+            {[0, 0.15, 0.3].map((offset, j) => (
+              <motion.span
+                key={`trail-${i}-${j}`}
+                initial={{ x: "-10vw", opacity: 0 }}
+                animate={
+                  reduce
+                    ? { opacity: 0.4 }
+                    : { x: ["-10vw", "110vw"], opacity: [0, 0.7 - j * 0.2, 0.7 - j * 0.2, 0] }
+                }
+                transition={{
+                  duration: t.dur,
+                  repeat: Infinity,
+                  ease: "linear",
+                  delay: t.delay + offset,
+                }}
+                className="absolute rounded-full"
+                style={{
+                  width: 4 - j,
+                  height: 4 - j,
+                  background: "#6EEB00",
+                  boxShadow: `0 0 ${10 - j * 2}px #6EEB00`,
+                }}
+              />
+            ))}
+          </div>
         ))}
 
         <div
@@ -245,7 +342,7 @@ export function HeroSection() {
         {/* LAPTOP STAGE */}
         <div className="relative w-full mt-10 sm:mt-14 max-w-4xl">
           {/* Floating decorative icons around the laptop */}
-          {floatingIcons.map(({ Icon, top, left, right, dur, delay, rotate }, i) => (
+          {floatingIcons.map(({ Icon, top, left, right, dur, delay, rotate, color }, i) => (
             <motion.div
               key={`float-${i}`}
               aria-hidden
@@ -264,7 +361,7 @@ export function HeroSection() {
               className="absolute z-10 hidden sm:flex items-center justify-center w-11 h-11 rounded-2xl bg-white border border-black/5 shadow-[0_15px_30px_-12px_rgba(11,15,20,0.25)]"
               style={{ top, left, right }}
             >
-              <Icon className="w-5 h-5 text-[#0B0F14]" strokeWidth={2.2} />
+              <Icon className="w-5 h-5" strokeWidth={2.2} style={{ color }} />
             </motion.div>
           ))}
 
@@ -344,6 +441,60 @@ export function HeroSection() {
               <Sparkles className="w-3.5 h-3.5" strokeWidth={2.5} />
             </span>
             <p className="text-xs font-display font-semibold text-[#0B0F14]">Diseño a medida</p>
+          </motion.div>
+
+          {/* MID LEFT — chat / mensaje cliente */}
+          <motion.div
+            style={{ y: yBlockBL }}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 1.1 }}
+            className="absolute top-[42%] left-[-3%] sm:left-[-1%] z-20 hidden lg:flex items-center gap-2 bg-white rounded-2xl px-3 py-2.5 shadow-[0_20px_40px_-15px_rgba(11,15,20,0.25)] border border-black/5 max-w-[180px]"
+          >
+            <span
+              className="flex items-center justify-center w-8 h-8 rounded-xl text-white shrink-0"
+              style={{ background: "linear-gradient(135deg, #25D366, #128C7E)" }}
+            >
+              <MessageCircle className="w-4 h-4" strokeWidth={2.5} />
+            </span>
+            <div className="text-left">
+              <p className="text-[10px] text-[#1F2937]/60 leading-none">Sofía · ahora</p>
+              <p className="text-xs font-medium text-[#0B0F14] leading-snug">¡Amo mi web! 💚</p>
+            </div>
+          </motion.div>
+
+          {/* MID RIGHT — métrica de ventas */}
+          <motion.div
+            style={{ y: yBlockTR }}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+            className="absolute top-[36%] right-[-3%] sm:right-[-1%] z-20 hidden lg:flex items-center gap-2 bg-[#0B0F14] text-white rounded-2xl px-3 py-2.5 shadow-[0_20px_40px_-15px_rgba(11,15,20,0.5)]"
+          >
+            <span
+              className="flex items-center justify-center w-8 h-8 rounded-xl text-[#0B0F14]"
+              style={{ background: "linear-gradient(135deg, #A3FF12, #6EEB00)" }}
+            >
+              <TrendingUp className="w-4 h-4" strokeWidth={2.5} />
+            </span>
+            <div className="text-left">
+              <p className="text-[10px] text-white/60 leading-none">Ventas hoy</p>
+              <p className="text-sm font-display font-semibold">+12 pedidos</p>
+            </div>
+          </motion.div>
+
+          {/* TOP CENTER — rating estrellitas */}
+          <motion.div
+            style={{ y: yBlockTL }}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.3 }}
+            className="absolute top-[-3%] left-1/2 -translate-x-1/2 z-20 hidden md:flex items-center gap-1.5 bg-white rounded-full px-3 py-1.5 shadow-[0_20px_40px_-15px_rgba(11,15,20,0.25)] border border-black/5"
+          >
+            {[0, 1, 2, 3, 4].map((i) => (
+              <Star key={i} className="w-3 h-3 fill-[#FFC107] text-[#FFC107]" />
+            ))}
+            <span className="text-[11px] font-display font-semibold text-[#0B0F14] ml-1">5.0</span>
           </motion.div>
 
           {/* Laptop transparent */}
