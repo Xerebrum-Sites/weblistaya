@@ -43,7 +43,9 @@ export function BeneficiosSection() {
             transition={{ duration: 0.6 }}
             className="font-display font-bold text-[#0B0F14] text-3xl sm:text-4xl md:text-5xl leading-[1.1]"
           >
-            Tres razones simples<br />para empezar hoy.
+            Tres razones simples
+            <br />
+            para empezar hoy.
           </motion.h2>
         </div>
 
@@ -57,15 +59,17 @@ export function BeneficiosSection() {
               transition={{ duration: 0.5, delay: i * 0.08 }}
               className="group relative rounded-2xl p-7 bg-[#F5F7FA] border border-black/5 hover:border-[#6EEB00]/40 hover:shadow-[0_20px_50px_-20px_rgba(110,235,0,0.35)] hover:-translate-y-1 transition-all"
             >
-              <div
-                className="inline-flex items-center justify-center w-12 h-12 rounded-xl text-[#0B0F14] mb-5"
-                style={{ background: "linear-gradient(135deg, #A3FF12 0%, #6EEB00 100%)" }}
-              >
-                <b.icon className="w-6 h-6" strokeWidth={2.25} />
+              <div className="flex items-center gap-4 mb-5">
+                <div
+                  className="flex items-center justify-center w-12 h-12 rounded-xl text-[#0B0F14] shrink-0"
+                  style={{ background: "linear-gradient(135deg, #A3FF12 0%, #6EEB00 100%)" }}
+                >
+                  <b.icon className="w-6 h-6" strokeWidth={2.25} />
+                </div>
+                <span className="block text-[10px] font-bold tracking-wider uppercase text-[#6EEB00] leading-none">
+                  {b.highlight}
+                </span>
               </div>
-              <span className="inline-block text-[10px] font-bold tracking-wider uppercase text-[#6EEB00] mt-4 mb-2">
-                {b.highlight}
-              </span>
               <h3 className="font-display font-bold text-2xl text-[#0B0F14] mb-2">{b.title}</h3>
               <p className="text-[#1F2937]/70 leading-relaxed">{b.text}</p>
             </motion.div>
