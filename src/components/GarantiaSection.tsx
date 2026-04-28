@@ -18,10 +18,10 @@ export function GarantiaSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.08 }}
-            className="flex items-start gap-4 bg-white rounded-2xl p-6 border border-black/5"
+            className="flex items-start gap-5 sm:gap-6 bg-white rounded-2xl p-6 border border-black/5"
           >
             <span
-              className="flex items-center justify-center w-12 h-12 rounded-xl text-[#0B0F14] shrink-0"
+              className="flex items-center justify-center w-12 h-12 rounded-xl text-[#0B0F14] shrink-0 mr-1"
               style={{ background: "linear-gradient(135deg, #A3FF12 0%, #6EEB00 100%)" }}
             >
               <item.icon className="w-6 h-6" strokeWidth={2.25} />
