@@ -307,7 +307,7 @@ export function HeroSection() {
           className="mt-7 sm:mt-9 flex flex-col items-center gap-3 w-full max-w-2xl"
         >
           <a
-            href="https://wa.me/5491100000000?text=Hola!%20Quiero%20info%20sobre%20mi%20web."
+            href="https://wa.me/5493412604109?text=Hola!%20Quiero%20info%20sobre%20mi%20web."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 rounded-full px-7 sm:px-9 h-13 py-3.5 text-sm sm:text-base font-semibold text-[#0B0F14] shadow-[0_12px_30px_-8px_rgba(110,235,0,0.55)] hover:shadow-[0_16px_36px_-8px_rgba(110,235,0,0.7)] hover:-translate-y-0.5 transition-all"

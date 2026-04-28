@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export function ContactoSection() {
   return (
@@ -44,22 +44,14 @@ export function ContactoSection() {
             rows={4}
             className="w-full bg-white rounded-xl border border-black/10 px-4 py-3 text-base text-[#0B0F14] placeholder:text-[#1F2937]/40 focus:outline-none focus:border-[#6EEB00] focus:ring-2 focus:ring-[#A3FF12]/30 transition-all resize-none"
           />
-          <div className="flex flex-col sm:flex-row gap-3 pt-2">
+          <div className="flex justify-center pt-2">
             <button
               type="submit"
-              className="flex-1 inline-flex items-center justify-center gap-2 rounded-full h-13 py-4 text-base font-semibold text-[#0B0F14] shadow-[0_12px_30px_-8px_rgba(110,235,0,0.55)] hover:-translate-y-0.5 transition-all"
+              className="inline-flex items-center justify-center gap-2 rounded-full px-8 h-13 py-4 text-base font-semibold text-[#0B0F14] shadow-[0_12px_30px_-8px_rgba(110,235,0,0.55)] hover:-translate-y-0.5 transition-all"
               style={{ background: "linear-gradient(135deg, #A3FF12 0%, #6EEB00 100%)" }}
             >
               Quiero mi presupuesto gratis <ArrowRight className="w-4 h-4" />
             </button>
-            <a
-              href="https://wa.me/5491100000000?text=Hola!%20Quiero%20info%20sobre%20mi%20web."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-4 text-base font-semibold text-[#0B0F14] bg-white border border-black/10 hover:border-[#6EEB00] transition-all"
-            >
-              <MessageCircle className="w-4 h-4" /> WhatsApp
-            </a>
           </div>
         </motion.form>
       </div>

@@ -1,4 +1,5 @@
 import logo from "@/assets/logo-negativo.png";
+import { Mail, MessageCircle } from "lucide-react";
 
 export function Footer() {
   return (
@@ -7,7 +8,23 @@ export function Footer() {
         <div className="flex items-center gap-3">
           <img src={logo} alt="Web Lista YA" className="h-10 w-auto" />
         </div>
-        <p className="text-xs">© {new Date().getFullYear()} Web Lista YA · Hecho en Argentina</p>
+        <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-5 text-xs">
+          <a
+            href="mailto:quiero@weblistaya.com.ar"
+            className="inline-flex items-center gap-1.5 hover:text-white transition-colors"
+          >
+            <Mail className="w-3.5 h-3.5" /> quiero@weblistaya.com.ar
+          </a>
+          <a
+            href="https://wa.me/5493412604109?text=Hola!%20Quiero%20info%20sobre%20mi%20web."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 hover:text-white transition-colors"
+          >
+            <MessageCircle className="w-3.5 h-3.5" /> +54 9 341 260-4109
+          </a>
+        </div>
+        <p className="text-xs">© {new Date().getFullYear()} Web Lista YA</p>
       </div>
     </footer>
   );

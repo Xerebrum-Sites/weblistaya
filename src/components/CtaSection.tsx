@@ -25,7 +25,7 @@ export function CtaSection() {
             </p>
             <div className="mt-7 flex flex-col sm:flex-row flex-wrap gap-3">
               <a
-                href="https://wa.me/5491100000000?text=Hola!%20Quiero%20info%20sobre%20mi%20web."
+                href="https://wa.me/5493412604109?text=Hola!%20Quiero%20info%20sobre%20mi%20web."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full px-6 h-12 text-sm sm:text-base font-semibold text-[#0B0F14] hover:-translate-y-0.5 transition-all"
