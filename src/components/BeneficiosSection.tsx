@@ -43,7 +43,9 @@ export function BeneficiosSection() {
             transition={{ duration: 0.6 }}
             className="font-display font-bold text-[#0B0F14] text-3xl sm:text-4xl md:text-5xl leading-[1.1]"
           >
-            Tres razones simples<br />para empezar hoy.
+            Tres razones simples
+            <br />
+            para empezar hoy.
           </motion.h2>
         </div>
 
