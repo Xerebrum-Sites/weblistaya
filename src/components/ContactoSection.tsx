@@ -1,7 +1,31 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useState } from "react";
+
+const EMAIL_DESTINO = "quiero@weblistaya.com.ar";
 
 export function ContactoSection() {
+  const [nombre, setNombre] = useState("");
+  const [email, setEmail] = useState("");
+  const [whatsapp, setWhatsapp] = useState("");
+  const [mensaje, setMensaje] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const subject = `Nueva consulta de ${nombre || "contacto web"}`;
+    const body = [
+      `Nombre: ${nombre}`,
+      `Email: ${email}`,
+      `WhatsApp: ${whatsapp}`,
+      "",
+      "Mensaje:",
+      mensaje || "(sin mensaje)",
+    ].join("\n");
+    window.location.href = `mailto:${EMAIL_DESTINO}?subject=${encodeURIComponent(
+      subject,
+    )}&body=${encodeURIComponent(body)}`;
+  };
+
   return (
     <section id="contacto" className="relative py-20 sm:py-28 px-4 sm:px-6 bg-white">
       <div className="max-w-3xl mx-auto">
@@ -23,25 +47,45 @@ export function ContactoSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="bg-[#F5F7FA] border border-black/5 rounded-2xl p-6 sm:p-8 space-y-4"
-          onSubmit={(e) => e.preventDefault()}
+          onSubmit={handleSubmit}
         >
           <div className="grid sm:grid-cols-2 gap-4">
             <input
               type="text"
               required
               placeholder="Tu nombre"
+              value={nombre}
+              onChange={(e) => setNombre(e.target.value)}
+              maxLength={100}
               className="w-full bg-white rounded-xl border border-black/10 px-4 h-12 text-base text-[#0B0F14] placeholder:text-[#1F2937]/40 focus:outline-none focus:border-[#6EEB00] focus:ring-2 focus:ring-[#A3FF12]/30 transition-all"
             />
             <input
               type="email"
               required
               placeholder="Tu email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              maxLength={255}
               className="w-full bg-white rounded-xl border border-black/10 px-4 h-12 text-base text-[#0B0F14] placeholder:text-[#1F2937]/40 focus:outline-none focus:border-[#6EEB00] focus:ring-2 focus:ring-[#A3FF12]/30 transition-all"
             />
           </div>
+          <input
+            type="tel"
+            required
+            placeholder="WhatsApp (con código de país, ej: +54 9 341 260 4109)"
+            value={whatsapp}
+            onChange={(e) => setWhatsapp(e.target.value)}
+            pattern="^\+?[0-9\s\-()]{8,20}$"
+            maxLength={25}
+            inputMode="tel"
+            className="w-full bg-white rounded-xl border border-black/10 px-4 h-12 text-base text-[#0B0F14] placeholder:text-[#1F2937]/40 focus:outline-none focus:border-[#6EEB00] focus:ring-2 focus:ring-[#A3FF12]/30 transition-all"
+          />
           <textarea
             placeholder="Contanos qué necesitás"
             rows={4}
+            value={mensaje}
+            onChange={(e) => setMensaje(e.target.value)}
+            maxLength={1000}
             className="w-full bg-white rounded-xl border border-black/10 px-4 py-3 text-base text-[#0B0F14] placeholder:text-[#1F2937]/40 focus:outline-none focus:border-[#6EEB00] focus:ring-2 focus:ring-[#A3FF12]/30 transition-all resize-none"
           />
           <div className="flex justify-center pt-2">
