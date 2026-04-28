@@ -21,7 +21,7 @@ export function Header() {
           <a href="#faq" className="hover:text-black transition-colors">FAQ</a>
         </nav>
         <a
-          href="https://wa.me/5491100000000?text=Hola!%20Quiero%20info%20sobre%20mi%20web."
+          href="https://wa.me/5493412604109?text=Hola!%20Quiero%20info%20sobre%20mi%20web."
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center rounded-full px-4 sm:px-5 h-10 text-sm font-semibold text-[#0B0F14] shadow-[0_6px_20px_-6px_rgba(110,235,0,0.6)] hover:shadow-[0_10px_28px_-6px_rgba(110,235,0,0.7)] hover:-translate-y-0.5 transition-all"
