@@ -6,7 +6,7 @@ const benefits = [
     icon: Zap,
     title: "Rápido",
     text: "Tu web online en pocos días, no en meses. Sin demoras ni esperas eternas.",
-    highlight: "5 días",
+    highlight: "7 días",
   },
   {
     icon: Check,
