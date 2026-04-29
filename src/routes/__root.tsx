@@ -2,7 +2,11 @@ import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/r
 
 import appCss from "../styles.css?url";
 import ogImage from "../assets/og-share.jpg?url";
-import favicon from "../assets/logo.png?url";
+import faviconIco from "../assets/favicon.ico?url";
+import favicon32 from "../assets/favicon-32.png?url";
+import favicon16 from "../assets/favicon-16.png?url";
+import appleTouchIcon from "../assets/apple-touch-icon.png?url";
+import faviconSvgFallback from "../assets/favicon-source.png?url";
 
 const SITE_URL = "https://weblistaya.com.ar";
 const SITE_NAME = "Web Lista YA";
@@ -76,8 +80,11 @@ export const Route = createRootRoute({
         href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap",
       },
       { rel: "canonical", href: SITE_URL },
-      { rel: "icon", href: favicon, type: "image/png" },
-      { rel: "apple-touch-icon", href: favicon },
+      { rel: "icon", href: faviconIco, sizes: "any" },
+      { rel: "icon", type: "image/png", sizes: "16x16", href: favicon16 },
+      { rel: "icon", type: "image/png", sizes: "32x32", href: favicon32 },
+      { rel: "icon", type: "image/png", sizes: "192x192", href: faviconSvgFallback },
+      { rel: "apple-touch-icon", sizes: "180x180", href: appleTouchIcon },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
     ],
@@ -95,7 +102,7 @@ export const Route = createRootRoute({
           description: SITE_DESCRIPTION,
           url: SITE_URL,
           image: `${SITE_URL}${ogImage}`,
-          logo: `${SITE_URL}${favicon}`,
+          logo: `${SITE_URL}${faviconSvgFallback}`,
           email: "quiero@weblistaya.com.ar",
           telephone: "+5493412604109",
           priceRange: "$$",
