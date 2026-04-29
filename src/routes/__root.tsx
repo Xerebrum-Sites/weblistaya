@@ -1,7 +1,7 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
-import ogImage from "../assets/hero-mockup.jpg?url";
+import ogImage from "../assets/og-share.jpg?url";
 import favicon from "../assets/logo.png?url";
 
 const SITE_URL = "https://weblistaya.com.ar";
