@@ -10,7 +10,6 @@ import { FaqSection } from "../components/FaqSection";
 import { CtaSection } from "../components/CtaSection";
 import { ContactoSection } from "../components/ContactoSection";
 import { Footer } from "../components/Footer";
-import { WhatsAppButton } from "../components/WhatsAppButton";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -31,7 +30,6 @@ function Index() {
         <CtaSection />
         <ContactoSection />
         <Footer />
-        <WhatsAppButton />
       </main>
     </>
   );
