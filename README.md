@@ -29,3 +29,5 @@ Se deploya automáticamente en Cloudflare Pages desde la rama `main`.
 
 También está sincronizado con Lovable.app para ediciones visuales.
 
+Último deploy forzado: 2026-06-16.
+
